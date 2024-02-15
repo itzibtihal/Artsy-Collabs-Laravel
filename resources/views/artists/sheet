@@ -1,0 +1,47 @@
+ <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-6">Description<span class="text-danger"> *</span></label>
+                                <textarea name="description" id="" cols="5" rows="2" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">Artist's Profile<span class="text-danger"> *</span></label>
+                                <input type="file" name="profile" accept="image/*" required>
+                            </div>
+                        </div>
+                        
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">Profession<span class="text-danger"> *</span></label>
+                                <input type="text" name="profession" maxlength="255" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">Phone Number<span class="text-danger"> *</span></label>
+                                <input type="text" name="phone_number" maxlength="20" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">Email<span class="text-danger"> *</span></label>
+                                <input type="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">Password<span class="text-danger"> *</span></label>
+                                <input type="password" name="password" minlength="8" required>
+                            </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-12 flex-column d-flex">
+                                <label class="form-control-label px-3">Status<span class="text-danger"> *</span></label>
+                                <select name="status" required>
+                                    <option value="0">Pending</option>
+                                    <option value="1">Approved</option>
+                                    <option value="2">Banned</option>
+                                </select>
+                            </div>
+                        </div>
