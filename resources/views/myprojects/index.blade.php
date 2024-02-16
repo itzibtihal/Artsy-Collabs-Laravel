@@ -55,12 +55,12 @@
                     </span>
                     <h3>Settings</h3>
                 </a>
-                <a href="#">
-                    <span class="material-icons-sharp">
-                        logout
-                    </span>
-                    <h3>Logout</h3>
-                </a>
+                
+                    <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+
+                  <button type="submit" class="dropdown-item">Logout</button>
+             
             </div>
         </aside>
         <!-- End of Sidebar Section -->
@@ -73,18 +73,19 @@
             <div class="recent-orders">
                 <h2>All My Projects</h2>
                 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Description</th>
-                            <th>Ending Date</th>
-                            <th>STOP Collab</th>
-                            <th>Action</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                @if ($projects)
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Ending Date</th>
+                    <th>STOP Collab</th>
+                    <th>Action</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
                 @foreach($projects as $project)
                     <tr>
                         <td>{{ $project->title }}</td>
@@ -100,7 +101,10 @@
                     </tr>
                 @endforeach
             </tbody>
-                </table>
+        </table>
+    @else
+        <p>No projects available.</p>
+    @endif
             </div>
                
                 
@@ -134,7 +138,7 @@
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>Reza</b></p>
+                        <p>Hey, <b>{{ auth()->user()->full_name }}</b></p>
                         <small class="text-muted">Artist</small>
                     </div>
                     <div class="profile-photo">

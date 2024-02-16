@@ -19,12 +19,18 @@ class DashboardController extends Controller
     $newArtists = User::where('status', 0)->get();
     $recentProjects = Project::orderBy('created_at', 'desc')->take(5)->get();
 
+    // $aristswithnoproject= User::whereDoesntHave('project')->get();
+
+    // $noprojectartists = User::withCount('project_artist')->orderBy('artist_id', 'Asc')->first();
+    
+
     return view('dashboard',[
             'totalProjects' => $totalProjects,
             'siteArtistsCount' => $siteArtistsCount,
             'partnersCount' => $partnersCount,
             'newArtists' => $newArtists,
             'recentProjects' => $recentProjects,
+            // 'noprojectartists'=>$noprojectartists,
         ]);
 }
 }

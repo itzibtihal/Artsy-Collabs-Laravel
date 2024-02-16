@@ -55,7 +55,7 @@
                     </span>
                     <h3>Settings</h3>
                 </a>
-                <a href="#">
+                <a href="{{ route('logout') }}">
                     <span class="material-icons-sharp">
                         logout
                     </span>
@@ -123,7 +123,7 @@
 
                 <div class="profile">
                     <div class="info">
-                        <p>Hey, <b>Reza</b></p>
+                        <p>Hey, <b>{{ auth()->user()->full_name }}</b></p>
                         <small class="text-muted">Artist</small>
                     </div>
                     <div class="profile-photo">

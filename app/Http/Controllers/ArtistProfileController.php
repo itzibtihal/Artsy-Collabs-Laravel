@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Auth;
 
 
 class ArtistProfileController extends Controller
@@ -24,9 +24,14 @@ class ArtistProfileController extends Controller
         return view('detailsproject.index', ['project' => $project]);
     }
     
+
     public function projects()
 {
-    $projects = Project::all();
+    $user = Auth::user();
+
+    // Get projects where the authenticated user is associated as an artist
+    $projects = $user->artists;
+
     return view('myprojects.index', ['projects' => $projects]);
 }
 

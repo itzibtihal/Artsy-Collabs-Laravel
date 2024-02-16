@@ -195,7 +195,8 @@
                 </tr>
             @endforeach
         </tbody>
-    </table>
+    
+
                 <a href="{{ route('projects.index') }}">Show All</a>
             </div>
             <!-- End of Recent Orders -->

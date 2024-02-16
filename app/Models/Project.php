@@ -26,7 +26,7 @@ class Project extends Model
         2 => 'Declined',
     ];
 
-    protected $dates = ['start_date', 'end_date'];
+    // protected $dates = ['start_date', 'end_date'];
 
   
 public function artists()
@@ -38,4 +38,7 @@ public function partners()
 {
     return $this->belongsToMany(Partner::class, 'project_partner', 'project_id', 'partner_id');
 }
+
+
+
 }

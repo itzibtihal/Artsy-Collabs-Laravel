@@ -5,6 +5,7 @@ use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ArtistProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +22,11 @@ Route::get('/', function () {
 });
 
 
+Route::middleware('admin')->group(function () {
+    
+   
+    
+});
 
 Route::resource('partners', PartnerController::class);
 Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
@@ -30,7 +36,8 @@ Route::get('/dashboard/partners', 'App\Http\Controllers\PartnerController@index'
 Route::resource('artists', ArtistController::class);
 Route::put('/artists/{id}', 'App\Http\Controllers\ArtistController@update')->name('artists.update');
 Route::resource('/projects', ProjectController::class);
-Route::post('/projects/add', 'ProjectController@store')->name('projects.store');
+Route::post('/projects/add', 'App\Http\Controllers\ProjectController@store')->name('projects.store');
+
 
 
 Route::get('/artist/dashboard', [ArtistProfileController::class, 'index'])->name('artist');
